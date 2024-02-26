@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: usage_message
+
+  rabbitmq:
+        username:
+                admin
+        password:
+                admin
+
+        
+logging:
+  level:
+    org: ERROR
+
+tutorial:
+  client:
+    duration: 50000
