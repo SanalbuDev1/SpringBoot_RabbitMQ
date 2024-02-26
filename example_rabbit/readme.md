@@ -38,4 +38,7 @@ tutorial:
 java -jar build/libs/example_rabbit-0.0.1-SNAPSHOT.jar --spring.profiles.active=hello-world,receiver
 java -jar build/libs/example_rabbit-0.0.1-SNAPSHOT.jar --spring.profiles.active=hello-world,sender
 
+![Diagram](src/main/resources/diagram1.png)
+![Diagram](src/main/resources/diagram2.png)
+
 
