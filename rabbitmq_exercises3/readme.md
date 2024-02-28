@@ -55,6 +55,7 @@ java -jar build/libs/rabbitmq_exercises3-0.0.1-SNAPSHOT.jar --spring.profiles.ac
 
 ![Diagram](src/main/resources/diagrama.png)
 ![Diagram](src/main/resources/diagrama1.png)
+![Diagram](src/main/resources/diagrama2.png)
 ![Diagram](src/main/resources/diagrama3.png)
 ![Diagram](src/main/resources/diagrama4.png)
 ![Diagram](src/main/resources/diagrama5.png)
