@@ -47,9 +47,11 @@ tutorial:
 
 Se debe ejecutar primero el receiver y al mismo tiempo el sender
 
+```
 ./gradlew clean build
 java -jar build/libs/rabbitmq_exercises3-0.0.1-SNAPSHOT.jar --spring.profiles.active=pub-sub,sender     --tutorial.client.duration=60000
 java -jar build/libs/rabbitmq_exercises3-0.0.1-SNAPSHOT.jar --spring.profiles.active=pub-sub,sender     --tutorial.client.duration=60000
+```
 
 ![Diagram](src/main/resources/diagrama.png)
 ![Diagram](src/main/resources/diagrama1.png)
