@@ -4,7 +4,7 @@
 https://www.rabbitmq.com/tutorials/tutorial-four-spring-amqp 
 
 A diferencia del ejemplo anterior, creamos varios bindings que se conectan entre la cola y el exchange, pero esta vez de tipo topic creamos patrones para que la cola envie a diferentes routingKey
-adicional al ejemplo se agrego *.car* y *.*.mothorcicle
+adicional al ejemplo se agrego *.car* y *.*.motorcycle
 
 
 ## Explicacion
