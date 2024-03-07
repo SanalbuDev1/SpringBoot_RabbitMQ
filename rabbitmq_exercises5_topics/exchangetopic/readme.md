@@ -3,7 +3,8 @@
 # Ejercicio RabbitMQ4
 https://www.rabbitmq.com/tutorials/tutorial-four-spring-amqp 
 
-A diferencia del ejemplo anterior, creamos varios bindings que se conectan entre la cola y el exchange, pero esta vez de tipo Direct a diferencia del anterior este no manda mensaje a todos si no simplemente al que se le indica en este caso GREEN,BLACK,ORANGE
+A diferencia del ejemplo anterior, creamos varios bindings que se conectan entre la cola y el exchange, pero esta vez de tipo topic creamos patrones para que la cola envie a diferentes routingKey
+adicional al ejemplo se agrego *.car* y *.*.mothorcicle
 
 
 ## Explicacion
@@ -14,6 +15,7 @@ C -> Consumidor 1...*
 Cola -> Cola 
 X -> Exhange (Direct)
 ```
+Se agrego la funcionalidad cuando algo falle devuelve automaticamente a la cola
 
 ![Diagram](src/main/resources/diagrama.png)
 
@@ -43,13 +45,11 @@ tutorial:
 Se debe ejecutar primero el receiver y al mismo tiempo el sender
 
 ./gradlew clean build
-java -jar build/libs/routing-0.0.1-SNAPSHOT.jar --spring.profiles.active=routing,sender     --tutorial.client.duration=60000
-java -jar build/libs/routing-0.0.1-SNAPSHOT.jar --spring.profiles.active=routing,receiver     --tutorial.client.duration=60000
+java -jar build/libs/exchangetopic-0.0.1-SNAPSHOT.jar --spring.profiles.active=topics,sender     --tutorial.client.duration=60000
+java -jar build/libs/exchangetopic-0.0.1-SNAPSHOT.jar --spring.profiles.active=topics,receiver     --tutorial.client.duration=60000
 
 ![Diagram](src/main/resources/diagrama.png)
 ![Diagram](src/main/resources/diagrama1.png)
-![Diagram](src/main/resources/diagrama3.png)
-![Diagram](src/main/resources/diagrama4.png)
-![Diagram](src/main/resources/diagrama5.png)
+![Diagram](src/main/resources/diagrama2.png)
 
 
