@@ -31,6 +31,10 @@ public class Application {
 	private Mono<Connection> connectionMono;
 
 	// Name of our Queue
+	private static final String EXCHANGE_NAME = "tut.confige.reactive";
+	private static final String ROUTING_KEY = "hello-temp";
+
+	// Name of our Queue
 	private static final String QUEUE = "hello-temp";
 
 	// slf4j logger
@@ -68,8 +72,8 @@ public class Application {
 			// Represent the list of messages that will be sent
 			Flux<OutboundMessage> outboundFlux = Flux.range(1, messageCount)
 					.map(i -> new OutboundMessage(
-							"",
-							QUEUE, ("Message - " + i).getBytes()));
+							EXCHANGE_NAME,
+							ROUTING_KEY, ("Message - " + i).getBytes()));
 
 			/*
 			 * 1. Declare the queue.
@@ -88,12 +92,6 @@ public class Application {
 						if (m.isAck()) {
 							LOGGER.info("Message [" + latch.getCount() + "] sent");
 							latch.countDown();
-							try {
-								latch.await(3L, TimeUnit.SECONDS);
-							} catch (InterruptedException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
 
 						}
 					});
